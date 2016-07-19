@@ -1,4 +1,6 @@
 <?php
+
+/*
 include("inc/data.php");
 include("inc/functions.php");
 
@@ -21,7 +23,7 @@ include("inc/header.php");
            }
            ?>
 
-					 <?php include('suggest.php'); ?>
+					 <?php include('catalog.php'); ?>
 
 				</ul>
 
@@ -30,3 +32,7 @@ include("inc/header.php");
 		</div>
 
 	<?php include("inc/footer.php"); ?>
+*/
+
+header('Location: catalog.php');
+?>

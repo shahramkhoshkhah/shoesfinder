@@ -5,7 +5,8 @@ include("inc/data.php");
 include("inc/functions.php");
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
-  
+}
+
 try {
    $results = $db->prepare("SELECT id, title, category_id, img, color, size, price FROM items WHERE id=?");
    $results->bindParam(1, $id);

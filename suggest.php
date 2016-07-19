@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING));
     $email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL));
@@ -36,13 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = 'Shosefinder suggestion from ' . $name;
         $mail->Body  = $email_body;
         if($mail->send()) {
-            header("location:suggest.php?status=thanks");
+            header("Location: suggest.php?status=thanks");
             exit;
          }
          $error_message ='Message could not be sent.';
          $error_message .= 'Miler Error: ' . $mail->ErrorInfo;
      }
 }
+
+include("inc/header.php");
+
 $pageTitle = "Suggest a Shoes style";
 $section = "suggest";
 //include("inc/header.php");
@@ -126,5 +130,6 @@ $section = "suggest";
     </div>
 </div>
 
-<?//php include("inc/footer.php");
+<?php
+include("inc/footer.php");
 ?>
