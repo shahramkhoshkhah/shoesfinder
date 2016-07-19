@@ -9,7 +9,7 @@
 
 		<div class="wrapper">
 
-			<h1><a href="./"><img src="img/logo1.jpg"></a></h1>
+			<h1><a href="./"><img src="img/logo1.jpg" class="titleimg"></a></h1>
 
 			<ul class="nav">
                 <li class="women<?php if ($section == "women") { echo "on"; } ?>"><a href="catalog.php?cat=women">Women</a></li>

@@ -509,7 +509,8 @@ table {
 html {overflow-y: scroll; overflow-x: hidden;}
 body {font-family: 'Open Sans', sans-serif; background:#f0eeed; color: #676767;}
 
-.wrapper {width: 980px; margin: 0 auto;}
+.titleimg {margin-top: 20px}
+.wrapper {width: 80%; margin: 0 auto;}
 #content {padding: 20px 0 80px;}
 .header:after {content:"";height:0;display:block;visibility:hidden;clear:both;}
 .header {background: #ef8887; border-bottom: 3px solid #db7a78;}
@@ -559,7 +560,7 @@ body {font-family: 'Open Sans', sans-serif; background:#f0eeed; color: #676767;}
     font-weight: normal;
     padding-top: 20px;
 }
-.section.catalog ul.items {margin: 0 0 -17px 0; padding: 0; width: 997px;}
+.section.catalog ul.items {margin: 0 0 -17px 0; padding: 0; width: 100%;}
 .section.catalog ul.items li {
     display: inline-block;
     list-style: none;
