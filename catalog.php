@@ -1,10 +1,8 @@
 <?php
 include("inc/data.php");
 include("inc/functions.php");
-
 $pageTitle = "Full Catalog";
 $section = null;
-
 if (isset($_GET["cat"])) {
     if ($_GET["cat"] == "women") {
       $pageTitle = "Women";
@@ -17,7 +15,6 @@ if (isset($_GET["cat"])) {
       $section = "kids";
     }
 }
-
 try {
    $results = $db->prepare("SELECT id, title FROM catalogs WHERE title=?");
    $results->bindParam(1, $section);
@@ -30,7 +27,6 @@ try {
    echo "Unable to retrieved results";
    exit;
 }
-
 include("inc/header.php"); ?>
 
 <div class="section catalog page">
@@ -53,18 +49,6 @@ include("inc/header.php"); ?>
                echo "Unable to retrieved results";
                exit;
             }
-
-            //var_dump($catalogs);
-
-            //var_dump($catalog);
-
-            //$categories = array_category($catalog,$section);
-            //var_dump($catalogs);
-
-            /*foreach ($catalogs as $item) {
-              $category = $item['category'];
-              echo $category;
-            }*/
             foreach($catalogs as $catalog) {
                 echo get_item_html($catalog['id'],$catalog);
             }

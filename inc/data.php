@@ -1,8 +1,9 @@
 <?php
 include("connection.php");
 /*
+//women
+
 $catalog = [];
-//women's
 $catalog[101] = [
   "title" => "Dress",
   "img" => "img/media/w.dress.jpg",
@@ -63,7 +64,10 @@ $catalog[104] = [
   "price" => 60,
   "category" => "Women",
 ];
-//men's
+
+
+
+ //men
 
 $catalog[201] = [
   "title" => "Dress",
@@ -77,7 +81,7 @@ $catalog[201] = [
        "M",
        "L"
   ],
-  "price" => 234.95,
+  "price" => 234,
   "category" => "Men",
 ];
 $catalog[202] = [
@@ -92,7 +96,7 @@ $catalog[202] = [
        "M",
        "L"
   ],
-  "price" => 279.99,
+  "price" => 279,
   "category" => "Men",
 ];
 $catalog[203] = [
@@ -107,7 +111,7 @@ $catalog[203] = [
        "M",
        "L"
   ],
-  "price" => 139.99,
+  "price" => 139,
   "category" => "Men",
 ];
 $catalog[204] = [
@@ -122,7 +126,7 @@ $catalog[204] = [
        "M",
        "L"
   ],
-  "price" => 112.95,
+  "price" => 112,
   "category" => "Men",
 ];
 
@@ -141,7 +145,7 @@ $catalog[301] = [
        "S",
        "M"
   ],
-  "price" => 64.95,
+  "price" => 64,
   "category" => "Kids",
 ];
 $catalog[302] = [
@@ -188,8 +192,6 @@ $catalog[304] = [
        "S",
        "M"
   ],
-  "price" => 49.95,
+  "price" => 49,
   "category" => "Kids",
 ];*/
-
-?>

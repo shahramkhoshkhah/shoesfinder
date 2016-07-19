@@ -13,7 +13,7 @@
 
 			<ul class="nav">
                 <li class="women<?php if ($section == "women") { echo "on"; } ?>"><a href="catalog.php?cat=women">Women</a></li>
-                <li class="men<?php if ($section == "men") { echo "on"; } ?>"><a href="catalog.php?cat=mens">Men</a></li>
+                <li class="men<?php if ($section == "men") { echo "on"; } ?>"><a href="catalog.php?cat=men">Men</a></li>
                 <li class="kids<?php if ($section == "kids") { echo "on"; } ?>"><a href="catalog.php?cat=kids">Kids</a></li>
                 <li class="suggest<?php if ($section == "suggest") { echo "on"; } ?>"><a href="suggest.php">Suggest</a></li>
             </ul>

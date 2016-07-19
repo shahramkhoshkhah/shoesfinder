@@ -1,22 +1,11 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-
 include("inc/data.php");
 include("inc/functions.php");
-
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
-    /*if (isset($catalog[$id])) {
-        $item = $catalog[$id];
-    }*/
-}
-
-/*if (!isset($item)) {
-    header("location:catalog.php");
-    exit;
-}*/
-
+  
 try {
    $results = $db->prepare("SELECT id, title, category_id, img, color, size, price FROM items WHERE id=?");
    $results->bindParam(1, $id);
@@ -26,14 +15,12 @@ try {
    echo "Unable to retrieved results";
    exit;
 }
-
 if (count($items) > 0) {
   $item = $items[0];
 } else {
   echo "Unable to retrieve item results.";
   exit;
 }
-
 try {
    $results = $db->prepare("SELECT title FROM categories WHERE id=?");
    $results->bindParam(1, $item['category_id']);
@@ -43,17 +30,14 @@ try {
    echo "Unable to retrieved results";
    exit;
 }
-
 if (count($categories) > 0) {
   $category = $categories[0]['title'];
 } else {
   echo "Unable to retrieve category results.";
   exit;
 }
-
 $pageTitle = $item["title"];
 $section = null;
-
 include("inc/header.php"); ?>
 
 <div class="section page">

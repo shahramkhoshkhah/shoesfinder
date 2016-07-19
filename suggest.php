@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim(filter_input(INPUT_POST,"name",FILTER_SANITIZE_STRING));
     $email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL));
@@ -9,22 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $size= trim(filter_input(INPUT_POST,"size",FILTER_SANITIZE_STRING));
     $price = trim(filter_input(INPUT_POST,"price",FILTER_SANITIZE_STRING));
     $details = trim(filter_input(INPUT_POST,"details",FILTER_SANITIZE_SPECIAL_CHARS));
-
     if ($name == "" || $email == "" || $category == "" || $title == "") {
         $error_message = "please fill in the required fields: Name, Email, Category and Title";
     }
     if (!isset($error_message) && $_POST["address"] != "") {
         $error_message ="Bad form input";
     }
-
     require("inc/phpmailer/class.phpmailer.php");
-
     $mail = new PHPMailer;
-
     if (!isset($error_message) && !$mail->ValidateAddress($email)) {
          $error_message = "Invalid Email Address";
     }
-
     if (!isset($error_message)) {
         $email_body = "";
         $email_body .=  "Name " . $name . "\n";
@@ -36,15 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_body .=  "Size " . $size . "\n";
         $email_body .=  "Price " . $price . "\n";
         $email_body .=  "Details " . $details . "\n";
-
         $mail->setFrom($email, $name);
         $mail->addAddress('shahram_khoshkhah@yahoo.com.au', 'Shawn');
-
         $mail->isHTML(false);
-
         $mail->Subject = 'Shosefinder suggestion from ' . $name;
         $mail->Body  = $email_body;
-
         if($mail->send()) {
             header("location:suggest.php?status=thanks");
             exit;
@@ -52,18 +42,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $error_message ='Message could not be sent.';
          $error_message .= 'Miler Error: ' . $mail->ErrorInfo;
      }
-
 }
-
-$pageTitle = "Suggest a Media Item";
+$pageTitle = "Suggest a Shoes style";
 $section = "suggest";
-
 //include("inc/header.php");
 ?>
 
 <div class="section page">
     <div class="wrapper">
-        <h1>Suggest a Media Item</h1>
+        <h1>Suggest a Shoes style</h1>
         <?php if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
              echo "<p>Thanks for the email! I&rsquo;ll check out your suggestion shortly!</p>";
         } else {
